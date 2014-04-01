@@ -1,5 +1,5 @@
 {
-  "name": "interpreteur-budgetairegit",
+  "name": "interpreteur-budgetaire",
   "version": "0.0.0",
   "dependencies": {
     "angular": "1.2.15",

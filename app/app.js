@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('interpreteurBudgetairegitApp', [
+  .module('interpreteurBudgetaireApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
@@ -10,8 +10,8 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'ecritures/list/ecritures-list.html',
+        controller: 'EcrituresCtrl'
       })
       .otherwise({
         redirectTo: '/'
