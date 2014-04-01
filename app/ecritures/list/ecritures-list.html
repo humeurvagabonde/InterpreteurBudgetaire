@@ -25,6 +25,8 @@
 
     <h2 class="sub-header">Section title</h2>
 
+    <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+
     <div class="row">
       <select id="selectEvenementId" 
               class="form-control" 

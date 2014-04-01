@@ -29,4 +29,9 @@ angular.module('interpreteurBudgetaireApp')
 		{id:'4', periode:'2015', dateCreation:'15/10/2014', sens:'C', montant:'15000', organId:'1', organLib:'Etab', imputation:'100/606', ope:'Ope2', livreId:'1', livreLib:'SBudAENatDest', auditId:'3', auditLib:'EvtSB3'},
 		{id:'5', periode:'2015', dateCreation:'20/10/2014', sens:'C', montant:'2000',  organId:'2', organLib:'Etab/UB/CR1', imputation:'100/606', ope:'null', livreId:'1', livreLib:'SBudAENatDest', auditId:'4', auditLib:'EvtSB4'}
 	];
-  });
+
+	$scope.alerts = [
+	    { type: 'danger', msg: 'Oh snap! Change a few things up and try submitting again.' },
+	    { type: 'success', msg: 'Well done! You successfully read this important alert message.' }
+	  ];
+});
