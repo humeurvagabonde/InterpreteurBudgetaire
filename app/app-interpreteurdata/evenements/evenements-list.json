@@ -1,10 +1,10 @@
 [
-  	{"id:"1", type":"SaisieBudget", "libelle":"EvtSB1"},
-  	{"id:"2", type":"SaisieBudget", "libelle":"EvtSB2"},
-  	{"id:"3", type":"SaisieBudget", "libelle":"EvtSB3"},
-  	{"id:"4", type":"SaisieBudget", "libelle":"EvtSB4"},
-  	{"id:"5", type":"Vote", "libelle":"EvtVote5"},
-  	{"id:"6", type":"Ventilation", "libelle":"EvtVentil1"},
-  	{"id:"7", type":"EngagementJuridique", "libelle":"EvtEJ1"},
-  	{"id:"8", type":"PaiementFacture", "libelle":"EvtPaiement1"}
+  	{"id:1, type":"SaisieBudget", "libelle":"EvtSB1"},
+  	{"id:2, type":"SaisieBudget", "libelle":"EvtSB2"},
+  	{"id:3, type":"SaisieBudget", "libelle":"EvtSB3"},
+  	{"id:4, type":"SaisieBudget", "libelle":"EvtSB4"},
+  	{"id:5, type":"Vote", "libelle":"EvtVote5"},
+  	{"id:6, type":"Ventilation", "libelle":"EvtVentil1"},
+  	{"id:7, type":"EngagementJuridique", "libelle":"EvtEJ1"},
+  	{"id:8, type":"PaiementFacture", "libelle":"EvtPaiement1"}
 ]

@@ -1,0 +1,74 @@
+<div class="container">
+	<div class="row">
+    <div class="panel panel-info">
+	    <div class="panel-heading">
+        <h3 class="panel-title">Générer un événement</h3>
+      </div>
+      <div class="panel-body">
+				<form role="form">
+				  <div class="form-group">
+				    <label for="typeEvntId">Type</label>
+			      <select id="typeEvntId" 
+			          class="form-control" 
+			          data-ng-model="typeEvenementSelectionne"
+			          data-ng-options="typeEvnt.type as typeEvnt.libelle for typeEvnt in typesEvenementDispos">
+	  				</select>
+				  </div>
+				  <div class="form-group">
+				    <label for="ligneBudgetaireId">Ligne budgétaire</label>
+						<select id="ligneBudgetaireId" 
+			          class="form-control" 
+			          data-ng-model="ligneBudgetaire"
+			          data-ng-options="ligneBudgetaire.id as ligneBudgetaire.libelle for ligneBudgetaire in lignesBudgetairesDispos">
+	  				</select>				  
+  				</div>
+				  <div class="form-group">
+				    <label for="axeId">Axe concerné</label>
+						<select id="axeId" 
+			          class="form-control" 
+			          data-ng-model="axe"
+			          data-ng-options="axe.type as axe.libelle for axe in axesDispos">
+	  				</select>						    
+				  </div>
+				  <div class="form-group">
+				    <label for="opeId">Opération</label>
+				    <input type="text" id="opeId">
+				  </div>
+				  <div class="checkbox">
+				    <label>
+				      <input type="checkbox"> Check me out
+				    </label>
+				  </div>
+				  <button type="submit" class="btn btn-default">Valider</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Résultat</h3>
+      </div>
+      <div class="panel-body">
+				<ul>
+        	<li ng-repeat="ecriture in ecrituresGenerees">
+        		{{ecriture}}
+        	</li>
+        </ul>   
+      </div>
+    </div>
+
+		<div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Debug</h3>
+      </div>
+      <div class="panel-body">
+				<ul>
+        	<li>typeEvenementSelectionne : {{typeEvenementSelectionne}}</li>
+        	<li>ligneBudgetaire : {{ligneBudgetaireSelectionne}}</li>
+        	<li>axe : {{axeSelectionne}}</li>
+        </ul>   
+      </div>
+    </div>
+
+	</div>
+</div>

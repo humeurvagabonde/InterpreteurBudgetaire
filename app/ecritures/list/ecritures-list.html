@@ -1,94 +1,55 @@
+<h2 class="sub-header">Section title</h2>
+
+<alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+
 <div class="row">
-
-  <div class="col-md-2 sidebar">
-    <ul class="nav nav-sidebar">
-      <li class="active"><a href="#">Overview</a></li>
-      <li><a href="#">Reports</a></li>
-      <li><a href="#">Analytics</a></li>
-      <li><a href="#">Export</a></li>
-    </ul>
-    <ul class="nav nav-sidebar">
-      <li><a href="">Nav item</a></li>
-      <li><a href="">Nav item again</a></li>
-      <li><a href="">One more nav</a></li>
-      <li><a href="">Another nav item</a></li>
-      <li><a href="">More navigation</a></li>
-    </ul>
-    <ul class="nav nav-sidebar">
-      <li><a href="">Nav item again</a></li>
-      <li><a href="">One more nav</a></li>
-      <li><a href="">Another nav item</a></li>
-    </ul>
-  </div>
-
-  <div class="col-md-10 main">
-
-    <h2 class="sub-header">Section title</h2>
-
-    <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
-
-    <div class="row">
-      <select id="selectEvenementId" 
-              class="form-control" 
-              data-ng-model="evenementSelectionne"
-              data-ng-options="evnt.id as evnt.libelle for evnt in evenementsDispos">
-      </select>
-    </div>
-           
-    <div class="table-responsive">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Periode</th>
-            <th>Date</th>
-            <th>Sens</th>
-            <th>Montant</th>
-            <th>Organ</th>
-            <th>Imputation</th>
-            <th>Opération</th>
-            <th>Livre</th>
-            <th>Audit</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr x-ng-repeat="ecriture in ecrituresDispos">
-            <td>{{ecriture.id}}</td>
-            <td>{{ecriture.periode}}</td>
-            <td>{{ecriture.dateCreation}}</td>
-            <td>{{ecriture.sens}}</td>
-            <td>{{ecriture.montant}}</td>
-            <td>{{ecriture.organLib}}</td>
-            <td>{{ecriture.imputation}}</td>
-            <td>{{ecriture.ope}}</td>
-            <td>{{ecriture.livreLib}}</td>
-            <td>{{ecriture.auditLib}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="row marketing">
-      <ul>
-        <li ng-repeat="thing in awesomeThings">
-          <p>
-            {{thing}}
-          </p>
-        </li>
-      </ul>
-    </div>
-  </div>
-
+  <select id="selectEvenementId" 
+          class="form-control" 
+          data-ng-model="evenementSelectionne"
+          data-ng-options="evnt.id as evnt.libelle for evnt in evenementsDispos">
+  </select>
+</div>
+       
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Periode</th>
+        <th>Date</th>
+        <th>Sens</th>
+        <th>Montant</th>
+        <th>Organ</th>
+        <th>Imputation</th>
+        <th>Opération</th>
+        <th>Livre</th>
+        <th>Audit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr x-ng-repeat="ecriture in ecrituresDispos">
+        <td>{{ecriture.id}}</td>
+        <td>{{ecriture.periode}}</td>
+        <td>{{ecriture.dateCreation}}</td>
+        <td>{{ecriture.sens}}</td>
+        <td>{{ecriture.montant}}</td>
+        <td>{{ecriture.organLib}}</td>
+        <td>{{ecriture.imputation}}</td>
+        <td>{{ecriture.ope}}</td>
+        <td>{{ecriture.livreLib}}</td>
+        <td>{{ecriture.auditLib}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
-<div class="row">
-<div class="col-md-12">
-  <img src="app-interpreteurdata/img/yeoman.png" alt="I'm Yeoman">
-  </div>
+<div class="row marketing">
+  <ul>
+    <li ng-repeat="thing in awesomeThings">
+      <p>
+        {{thing}}
+      </p>
+    </li>
+  </ul>
 </div>
-
-<div class="row">
-  <div class="footer">
-    <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-  </div>
 </div>
