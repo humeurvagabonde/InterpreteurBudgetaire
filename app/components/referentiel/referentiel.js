@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('interpreteurBudgetaireApp.referentiel', []);
+angular.module('interpreteurBudgetaireApp.referentiel', ['restangular']);

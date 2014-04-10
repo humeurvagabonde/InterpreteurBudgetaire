@@ -11,7 +11,8 @@ angular
     'ngSanitize',
     'ngRoute',
     'ui.bootstrap',
-    'ui.router'
+    'ui.router',
+    'restangular'
   ])
   .run(
     [          '$rootScope', '$state', '$stateParams',
@@ -26,8 +27,11 @@ angular
       }
     ]
   )
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, RestangularProvider) {
     // For any unmatched url, redirect to /state1
     $urlRouterProvider.otherwise("/ecritures");
+
+    // restangular
+    RestangularProvider.setBaseUrl('/app-interpreteurdata/api/v1');
 
   });

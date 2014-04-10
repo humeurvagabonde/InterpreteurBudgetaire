@@ -10,6 +10,12 @@ angular.module('interpreteurBudgetaireApp.scenario', ['ui.router', 'interpreteur
 	    		},
 	    		lignesBudgetaires: function(referentielService) {
 	    			return referentielService.loadLignesBudgetaires();
+	    		},
+	    		axes: function(referentielService) {
+	    			return referentielService.loadAxes();
+	    		},
+	    		operations: function(referentielService) {
+	    			return referentielService.loadOperations();
 	    		}
 	    	},
 	    	url: '/scenario',

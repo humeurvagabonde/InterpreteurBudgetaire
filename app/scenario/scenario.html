@@ -18,26 +18,25 @@
 				    <label for="ligneBudgetaireId">Ligne budgétaire</label>
 						<select id="ligneBudgetaireId" 
 			          class="form-control" 
-			          data-ng-model="ligneBudgetaire"
+			          data-ng-model="ligneBudgetaireSelectionnee"
 			          data-ng-options="ligneBudgetaire.id as ligneBudgetaire.libelle for ligneBudgetaire in lignesBudgetairesDispos">
 	  				</select>				  
   				</div>
 				  <div class="form-group">
 				    <label for="axeId">Axe concerné</label>
-						<select id="axeId" 
+					<select id="axeId" 
 			          class="form-control" 
-			          data-ng-model="axe"
+			          data-ng-model="axeSelectionne"
 			          data-ng-options="axe.type as axe.libelle for axe in axesDispos">
 	  				</select>						    
 				  </div>
 				  <div class="form-group">
 				    <label for="opeId">Opération</label>
-				    <input type="text" id="opeId">
-				  </div>
-				  <div class="checkbox">
-				    <label>
-				      <input type="checkbox"> Check me out
-				    </label>
+				    <select id="axeId" 
+			          class="form-control" 
+			          data-ng-model="operationSelectionnee"
+			          data-ng-options="axe.type as axe.libelle for axe in axesDispos">
+	  				</select>
 				  </div>
 				  <button type="submit" class="btn btn-default">Valider</button>
 				</form>
@@ -64,8 +63,9 @@
       <div class="panel-body">
 				<ul>
         	<li>typeEvenementSelectionne : {{typeEvenementSelectionne}}</li>
-        	<li>ligneBudgetaire : {{ligneBudgetaireSelectionne}}</li>
+        	<li>ligneBudgetaire : {{ligneBudgetaireSelectionnee}}</li>
         	<li>axe : {{axeSelectionne}}</li>
+        	<li>operation : {{operationSelectionnee}}</li>
         </ul>   
       </div>
     </div>

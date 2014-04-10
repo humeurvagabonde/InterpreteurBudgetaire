@@ -1,16 +1,26 @@
 'use strict';
 
 angular.module('interpreteurBudgetaireApp.referentiel')
-  .factory('referentielService', ['$http', function ($http) {
+  .factory('referentielService', ['$http', 'Restangular', function ($http, Restangular) {
     // Service logic
+    var typesEvenement = Restangular.all('referentiel/types-evenement');
+    var lignesBudgetaires = Restangular.all('referentiel/lignes-budgetaires');
+    var axes = Restangular.all('referentiel/axes');
+    var operations = Restangular.all('referentiel/operations');
 
     // Public API here
     return {
       loadTypesEvenement: function () {
-        return $http.get('/app-interpreteurdata/referentiel/types-evenement.json');
+        return typesEvenement.getList();
       },
       loadLignesBudgetaires: function () {
-        return $http.get('/app-interpreteurdata/referentiel/lignes-budgetaires.json');
+        return lignesBudgetaires.getList();
+      },
+      loadAxes: function () {
+        return axes.getList();
+      },
+      loadOperations: function () {
+        return operations.getList();
       }
     };
 }]);
