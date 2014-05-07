@@ -4,6 +4,7 @@ angular.module('interpreteurBudgetaireApp.scenario', ['ui.router', 'interpreteur
 	.config(function ($stateProvider) {
     $stateProvider
 	    .state('scenario', {
+	    	abstract: true,
 	    	resolve: {
 	    		typesEvenement: function(referentielService) {
 	    			return referentielService.loadTypesEvenement();
@@ -21,6 +22,10 @@ angular.module('interpreteurBudgetaireApp.scenario', ['ui.router', 'interpreteur
 	    	url: '/scenario',
 	    	templateUrl: 'scenario/scenario.html',
       	controller: 'ScenarioCtrl'
-    })
+		})
+		.state('scenario.creer', {
+			url: '/creer',
+			views:
+		})
   }
 );

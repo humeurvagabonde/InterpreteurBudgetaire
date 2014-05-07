@@ -8,86 +8,107 @@
 			  </a>
 			</div>
 		</div>
-		<div class="col-md-8">
 
-    	<div class="panel panel-info">
-		    <div class="panel-heading">
-	        <h3 class="panel-title">Générer un événement</h3>
-	      </div>
-	      <div class="panel-body">
-					<form role="form">
-						<div class="form-group">
-							<label for="typeEvntId">Type</label>
-						<div class="btn-group">
-			        <button type="button" class="btn btn-primary" ng-model="radioModel" btn-radio="'Left'">Left</button>
-			        <button type="button" class="btn btn-primary" ng-model="radioModel" btn-radio="'Middle'">Middle</button>
-			        <button type="button" class="btn btn-primary" ng-model="radioModel" btn-radio="'Right'">Right</button>
-				    </div>
-				    </div>
-					  <div class="form-group">
-					    <label for="typeEvntId">Type</label>
-				      <select id="typeEvntId" 
-				          class="form-control" 
-				          data-ng-model="typeEvenementSelectionne"
-				          data-ng-options="typeEvnt.type as typeEvnt.libelle for typeEvnt in typesEvenementDispos">
-		  				</select>
-					  </div>
-					  <div class="form-group">
-					    <label for="ligneBudgetaireId">Ligne budgétaire</label>
-							<select id="ligneBudgetaireId" 
-				          class="form-control" 
-				          data-ng-model="ligneBudgetaireSelectionnee"
-				          data-ng-options="ligneBudgetaire.id as ligneBudgetaire.libelle for ligneBudgetaire in lignesBudgetairesDispos">
-		  				</select>				  
-	  				</div>
-					  <div class="form-group">
-					    <label for="axeId">Axe concerné</label>
-						<select id="axeId" 
-				          class="form-control" 
-				          data-ng-model="axeSelectionne"
-				          data-ng-options="axe.type as axe.libelle for axe in axesDispos">
-		  				</select>						    
-					  </div>
-					  <div class="form-group">
-					    <label for="opeId">Opération</label>
-					    <select id="axeId" 
-				          class="form-control" 
-				          data-ng-model="operationSelectionnee"
-				          data-ng-options="axe.type as axe.libelle for axe in axesDispos">
-		  				</select>
-					  </div>
-					  <button type="submit" class="btn btn-default">Valider</button>
-					</form>
-				</div>
+		<div class="col-md-2">
+			<div class="list-group">
+			  <a href="#" class="list-group-item active">
+			    <h4 class="list-group-item-heading">List group item heading</h4>
+			    <p class="list-group-item-text">...</p>
+			  </a>
 			</div>
 		</div>
 
-		<div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Résultat</h3>
-      </div>
-      <div class="panel-body">
-				<ul>
-        	<li ng-repeat="ecriture in ecrituresGenerees">
-        		{{ecriture}}
-        	</li>
-        </ul>   
-      </div>
-    </div>
+		<div class="col-md-8">
+	    <div class="panel panel-info">
+	    	<div class="panel-heading">
+    	    <h3 class="panel-title">CRB Sélectionnés</h3>
+		    </div>
+	    </div>
 
-		<div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Debug</h3>
-      </div>
-      <div class="panel-body">
-				<ul>
-        	<li>typeEvenementSelectionne : {{typeEvenementSelectionne}}</li>
-        	<li>ligneBudgetaire : {{ligneBudgetaireSelectionnee}}</li>
-        	<li>axe : {{axeSelectionne}}</li>
-        	<li>operation : {{operationSelectionnee}}</li>
-        </ul>   
-      </div>
-    </div>
+	    <div class="panel panel-info">
+			    <div class="panel-heading">
+		        <h3 class="panel-title">Générer un événement</h3>
+		      </div>
+		      <div class="panel-body">
+						<form role="form">
+							<div class="form-group">
+								<label for="typeEvntId">Type</label>
+							<div class="btn-group">
+				        <button type="button" class="btn btn-primary" ng-model="radioModel" btn-radio="'Left'">Left</button>
+				        <button type="button" class="btn btn-primary" ng-model="radioModel" btn-radio="'Middle'">Middle</button>
+				        <button type="button" class="btn btn-primary" ng-model="radioModel" btn-radio="'Right'">Right</button>
+					    </div>
+					    </div>
+						  <div class="form-group">
+						    <label for="typeEvntId">Type</label>
+					      <select id="typeEvntId" 
+					          class="form-control" 
+					          data-ng-model="typeEvenementSelectionne"
+					          data-ng-options="typeEvnt.type as typeEvnt.libelle for typeEvnt in typesEvenementDispos">
+			  				</select>
+						  </div>
+						  <div class="form-group">
+						    <label for="ligneBudgetaireId">Ligne budgétaire</label>
+								<select id="ligneBudgetaireId" 
+					          class="form-control" 
+					          data-ng-model="ligneBudgetaireSelectionnee"
+					          data-ng-options="ligneBudgetaire.id as ligneBudgetaire.libelle for ligneBudgetaire in lignesBudgetairesDispos">
+			  				</select>				  
+		  				</div>
+						  <div class="form-group">
+						    <label for="axeId">Axe concerné</label>
+							<select id="axeId" 
+					          class="form-control" 
+					          data-ng-model="axeSelectionne"
+					          data-ng-options="axe.type as axe.libelle for axe in axesDispos">
+			  				</select>						    
+						  </div>
+						  <div class="form-group">
+						    <label for="opeId">Opération</label>
+						    <select id="axeId" 
+					          class="form-control" 
+					          data-ng-model="operationSelectionnee"
+					          data-ng-options="axe.type as axe.libelle for axe in axesDispos">
+			  				</select>
+						  </div>
+						  <button type="submit" class="btn btn-default">Valider</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-2 col-md-8">
+			<div class="panel panel-default">
+	      <div class="panel-heading">
+	        <h3 class="panel-title">Résultat</h3>
+	      </div>
+	      <div class="panel-body">
+					<ul>
+	        	<li ng-repeat="ecriture in ecrituresGenerees">
+	        		{{ecriture}}
+	        	</li>
+	        </ul>   
+	      </div>
+	    </div>
+	  </div>
+
+	  <div class="col-md-offset-2 col-md-8">
+			<div class="panel panel-default">
+	      <div class="panel-heading">
+	        <h3 class="panel-title">Debug</h3>
+	      </div>
+	      <div class="panel-body">
+					<ul>
+	        	<li>typeEvenementSelectionne : {{typeEvenementSelectionne}}</li>
+	        	<li>ligneBudgetaire : {{ligneBudgetaireSelectionnee}}</li>
+	        	<li>axe : {{axeSelectionne}}</li>
+	        	<li>operation : {{operationSelectionnee}}</li>
+	        </ul>   
+	      </div>
+	    </div>
+	  </div>
 
 	</div>
 </div>
