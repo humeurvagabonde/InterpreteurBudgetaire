@@ -105,3 +105,170 @@ body {
 }
 
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+/*
+[ Shortcuts / .shortcuts ]
+*/
+.shortcuts {
+  text-align: center;
+}
+.shortcuts .shortcut {
+  width: 110px;
+  display: inline-block;
+  padding: 15px 0;
+  margin: 0 5px 1em;
+  vertical-align: top;
+  text-decoration: none;
+  background: #F3F3F3;
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#ffffff), to(#eeeeee));
+  background-image: -webkit-linear-gradient(top, #ffffff, 0%, #eeeeee, 100%);
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #eeeeee 100%);
+  background-image: linear-gradient(to bottom, #ffffff 0%, #eeeeee 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffeeeeee', GradientType=0);
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.shortcuts .shortcut .shortcut-icon {
+  width: 100%;
+  margin-top: .25em;
+  margin-bottom: .35em;
+  font-size: 32px;
+  color: #555;
+}
+.shortcuts .shortcut:hover {
+  background: #E8E8E8;
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#fafafa), to(#e1e1e1));
+  background-image: -webkit-linear-gradient(top, #fafafa, 0%, #e1e1e1, 100%);
+  background-image: -moz-linear-gradient(top, #fafafa 0%, #e1e1e1 100%);
+  background-image: linear-gradient(to bottom, #fafafa 0%, #e1e1e1 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffafafa', endColorstr='#ffe1e1e1', GradientType=0);
+}
+.shortcuts .shortcut:active {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.shortcuts .shortcut:hover .shortcut-icon {
+  color: #666;
+}
+.shortcuts .shortcut-label {
+  display: block;
+  margin-top: .75em;
+  font-weight: 400;
+  color: #666;
+}
+
+/** glyphicons exemples bootsrap */
+.lignes-message {
+  padding-left: 0;
+  list-style: none;
+}
+
+.ligne-details {
+  float: left;
+  width: 12.5%;
+  font-size: 12px;
+  
+  /*width: 25%;*/
+  /*font-size: 10px;*/
+
+  height: 115px;
+  padding: 10px;
+  line-height: 1.4;
+  text-align: center;
+  border: 1px solid #fff;
+  background-color: #f9f9f9;
+}
+
+.glyphicon-class {
+  display: block;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.message-ligne {
+  margin-left: 50px;
+}
+
+.message-ligne-right {
+  margin-right: 90px;
+}
+
+.ligne-actions-sidebar {
+ margin-left: -45px; 
+}
+
+.ligne-actions-sidebar-right {
+ margin-right: -45px; 
+}
+
+/* From github */
+.sunken-menu.vertical-right {
+    max-width: 250px;
+}
+
+.sunken-menu.vertical-right .sunken-menu-contents {
+    padding: 12px 0 15px;
+    box-shadow: inset 1px 0 0 #eee;
+    background-image: -webkit-linear-gradient(left, #f6f6f6 0%, #fff 8px);
+    background-image: -moz-linear-gradient(left, #f6f6f6 0%, #fff 8px);
+    background-image: linear-gradient(to right, #f6f6f6 0%, #fff 8px)
+}
+
+.sunken-menu.vertical-right .sunken-menu-contents:before,.sunken-menu.vertical-right .sunken-menu-contents:after {
+    height: 15px;
+    width: 100%;
+    left: 0;
+    background-color: transparent
+}
+
+.sunken-menu.vertical-right .sunken-menu-contents:before {
+    background-color: rgba(255,255,255,0);
+    background-image: -moz-linear-gradient(#fff, rgba(255,255,255,0));
+    background-image: -webkit-linear-gradient(#fff, rgba(255,255,255,0));
+    background-image: linear-gradient(#fff, rgba(255,255,255,0));
+    background-repeat: repeat-x;
+    background-color: transparent;
+    top: 0
+}
+
+.sunken-menu .sunken-menu-group {
+    list-style-type: none;
+}
+
+.sunken-menu .sunken-menu-item {
+    padding: 8px 10px;
+    display: block;
+    text-shadow: 0 1px 0 #fff;
+    text-decoration: none;
+    border: 1px solid transparent;
+    outline: 0
+}
+
+.sunken-menu .sunken-menu-item.selected {
+    background: #fff;
+    border: 1px solid #eee;
+    color: #333333;
+    font-weight: bold
+}
+
+.sunken-menu .sunken-menu-item.selected:after {
+    background-color: #ba5d0f;
+    background-image: -moz-linear-gradient(#d26911, #ba5d0f);
+    background-image: -webkit-linear-gradient(#d26911, #ba5d0f);
+    background-image: linear-gradient(#d26911, #ba5d0f);
+    background-repeat: repeat-x;
+    box-shadow: inset -1px -1px 0 rgba(0,0,0,0.1)
+}
+
+/* From http://jsfiddle.net/kuntau/X5Wvn/ */
+/* ajouter mes propres classes pour eviter de polluer panel-info ? */
+.list-group li {
+    list-style: none;
+}
+.panel-info, .panel-rating, .panel-more1 {
+    float: left;
+    margin: 0 10px;
+}
+
