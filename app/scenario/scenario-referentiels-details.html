@@ -1,8 +1,6 @@
 <div class="list-group">
   <h4 class="list-group-item-heading">Détails</h4>
   <div class="list-group">
-    <a href="#" class="list-group-item">10 - Fonctionnement</a>
-    <a href="#" class="list-group-item">20 - Investissement</a>
-    <a href="#" class="list-group-item">30 - Personnel</a>
+    <a href="" ng-repeat="typeNature in typesNatureDispos" class="list-group-item" ng-click="selectionnerTypeNature(typeNature)">{{typeNature.libelle}}</a>
   </div>
 </div>

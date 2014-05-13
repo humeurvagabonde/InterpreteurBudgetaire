@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('interpreteurBudgetaireApp.scenario')
-  .controller('ScenarioCtrl', function ($scope, typesEvenement, lignesBudgetaires) {
+  .controller('ScenarioCtrl', function ($scope, typesEvenement, lignesBudgetaires, typesNature) {
 
 		$scope.typeEvenementSelectionne = '';
 		$scope.typesEvenementDispos = typesEvenement;
@@ -15,4 +15,10 @@ angular.module('interpreteurBudgetaireApp.scenario')
 		$scope.operationSelectionee = '';
 
 		$scope.ecrituresGenerees = [];
+
+		$scope.typeNatureSelectionne = '';
+ 		$scope.typesNatureDispos = typesNature;
+		$scope.selectionnerTypeNature = function(typeNature) {
+			$scope.typeNatureSelectionne = typeNature.code;
+		}
 	});

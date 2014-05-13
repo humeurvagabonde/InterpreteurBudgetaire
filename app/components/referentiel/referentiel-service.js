@@ -7,6 +7,7 @@ angular.module('interpreteurBudgetaireApp.referentiel')
     var lignesBudgetaires = Restangular.all('referentiel/lignes-budgetaires');
     var axes = Restangular.all('referentiel/axes');
     var operations = Restangular.all('referentiel/operations');
+    var typesNature = Restangular.all('referentiel/types-nature');
 
     // Public API here
     return {
@@ -21,6 +22,9 @@ angular.module('interpreteurBudgetaireApp.referentiel')
       },
       loadOperations: function () {
         return operations.getList();
+      },
+      loadTypesNature: function () {
+        return typesNature.getList();
       }
     };
 }]);

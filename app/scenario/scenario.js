@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('interpreteurBudgetaireApp.scenario', ['ui.router', 'interpreteurBudgetaireApp.referentiel'])
+angular.module('interpreteurBudgetaireApp.scenario', ['ui.router', 'interpreteurBudgetaireApp.referentiel', 'interpreteurBudgetaireApp.scenario'])
   .config(function ($stateProvider) {
     $stateProvider
       .state('scenario', {
@@ -17,27 +17,27 @@ angular.module('interpreteurBudgetaireApp.scenario', ['ui.router', 'interpreteur
           },
           operations: function(referentielService) {
             return referentielService.loadOperations();
+          },
+          typesNature: function(referentielService) {
+            return referentielService.loadTypesNature();
           }
         },
         url: '/scenario',
         templateUrl: 'scenario/scenario.html',
-          controller: 'ScenarioCtrl'
+        controller: 'ScenarioCtrl'
     })
     .state('scenario.creer', {
       url: '/creer',
       views: {
         'referentiels-liste': {
-          templateUrl: 'scenario/scenario-referentiels-liste.html',
-          controller: 'ScenarioCtrl'
+          templateUrl: 'scenario/scenario-referentiels-liste.html'
         },
         'referentiels-details': {
-          templateUrl: 'scenario/scenario-referentiels-details.html',
-          controller: 'ScenarioCtrl'
+          templateUrl: 'scenario/scenario-referentiels-details.html'
         },
         'message-composition': {
-          templateUrl: 'scenario/scenario-message-composition.html',
-          controller: 'ScenarioCtrl'
-        },
+          templateUrl: 'scenario/scenario-message-composition.html'
+        }
       }
     })
   }

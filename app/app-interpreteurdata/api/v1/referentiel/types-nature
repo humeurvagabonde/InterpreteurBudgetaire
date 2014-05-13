@@ -1,0 +1,5 @@
+[
+  	{"id":1, "code":10, "libelle":"10 - Fonctionnement", "type":"DEPENSE"},
+  	{"id":2, "code":20, "libelle":"20 - Investissement", "type":"DEPENSE"},
+  	{"id":3, "code":30, "libelle":"30 - Personnel", "type":"DEPENSE"}
+]
