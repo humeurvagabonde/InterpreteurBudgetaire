@@ -2,7 +2,7 @@
     <div class="panel-heading clearfix">
       <h3 class="panel-title  pull-left" style="padding-top: 8px;">Composer un objet de gestion</h3>
       <div class="btn-group pull-right">
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-left"></span></button>
+        <button type="button" class="btn btn-default" ng-click="ajouterNouvelleLigne(message)"><span class="glyphicon glyphicon-plus-sign"></span></button>
         <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-center"></span></button>
         <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-right"></span></button>
         <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-justify"></span></button>
@@ -22,15 +22,15 @@
 				<div class="form-group">
 			    <label>Ligne</label>
 					<ul class="list-group">
-				    <li>
+				    <li ng-repeat="ligne in message.lignes">
 			        <div class="panel panel-default message-ligne-right">
 		            <div class="panel-body">
 	                <div class="panel-more1 imputation imputation-organ imputation-empty">
-	                    
+	                    {{ligne.organ}}
 	                </div>
 	                <div class="panel-more1 imputation imputation-empty">
 	                	<i class="fa fa-square-o"></i>
-	                	<span class="glyphicon-class">glyphicon glyphicon-fast-forward</span>
+	                	<span class="glyphicon-class">{{ligne.organ}}</span>
 	                </div>
 	                <div class="panel-more1 imputation imputation-operation">
 	                    <img src="http://lorempixel.com/100/100" />
@@ -39,15 +39,18 @@
 									<div class="panel-more1 imputation-montant form-group col-xs-3 vcenter">
 								    <div class="input-group">
 										  <span class="input-group-addon">€</span>
-										  <input type="text" class="form-control" placeholder="Username">
+										  <input type="text" class="form-control" placeholder="Montant" ng-model="ligne.montant">
 										</div>
 								  </div>
+								  <!-- Side bar -->
 									<div class="ligne-actions-sidebar-right sunken-menu vertical-right pull-right">
 										<div class="sunken-menu-contents">
 											<ul class="sunken-menu-group">
 												<li>
 													<a href="" class="sunken-menu-item selected">
-														<i class="fa fa-square-o"></i>
+															{{isLigneEnCours(ligne)}}
+														<i ng-class="angular.extend([], 'fa', isLigneEnCours(ligne) ? 'fa-trash-o' : 'fa-square-o')"></i>
+													
 													</a>
 												</li>
 												<li>
@@ -68,7 +71,6 @@
 			        </div>
 				    </li>
 					</ul>
-					
 			  </div>
 
 			  <div class="form-group">
