@@ -16,6 +16,7 @@ angular.module('interpreteurBudgetaireApp.scenario')
 
 		$scope.ecrituresGenerees = [];
 
+
 		$scope.typeNatureSelectionne = '';
  		$scope.typesNatureDispos = typesNature;
 		$scope.selectionnerTypeNature = function(typeNature) {

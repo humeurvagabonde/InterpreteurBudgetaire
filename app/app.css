@@ -255,6 +255,8 @@ body {
 .panel-rating, .panel-more1 {
     float: left;
     margin: 0 10px;
+    border-radius: 3px;
+    text-align: center;
 }
 
 .sunken-menu-group {
@@ -268,7 +270,7 @@ body {
 }
 
 .imputation-empty {
-    background-color: red;
+    background-color: #f9f9f9;
     border: 1px dashed;
 }
 
