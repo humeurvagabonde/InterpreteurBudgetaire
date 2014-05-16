@@ -48,9 +48,7 @@
 											<ul class="sunken-menu-group">
 												<li>
 													<a href="" class="sunken-menu-item selected">
-															{{isLigneEnCours(ligne)}}
-														<i ng-class="angular.extend([], 'fa', isLigneEnCours(ligne) ? 'fa-trash-o' : 'fa-square-o')"></i>
-													
+														<i ng-class="{fa: true, 'fa-trash-o': isLigneEnCours(ligne), 'fa-square-o': !isLigneEnCours(ligne)}"></i>													
 													</a>
 												</li>
 												<li>

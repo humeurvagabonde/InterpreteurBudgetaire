@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('interpreteurBudgetaireApp.scenario')
-  .controller('ScenarioCtrl', function ($scope, typesEvenement, lignesBudgetaires, typesNature) {
+  .controller('ScenarioCtrl', function ($scope, Message, typesEvenement, lignesBudgetaires, typesNature) {
 
 		$scope.typeEvenementSelectionne = '';
 		$scope.typesEvenementDispos = typesEvenement;
@@ -46,7 +46,7 @@ angular.module('interpreteurBudgetaireApp.scenario')
 			return message;
 		}
 
-		$scope.message = nouveauMessage();
+		$scope.message = new Message();
 
 		/* Modele dans l'ihm */
 		$scope.currentLigne = $scope.message.lignes[0];
