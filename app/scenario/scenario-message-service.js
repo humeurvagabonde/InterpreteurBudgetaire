@@ -32,7 +32,7 @@ angular.module('interpreteurBudgetaireApp.scenario')
         // Some other initializations related to book
         if (angular.isUndefined(this.lignes)) {
             this.lignes = [];
-            this.lignes[0] = this.initNouvelleLigne();
+            ;
         }
     };
 
@@ -43,8 +43,12 @@ angular.module('interpreteurBudgetaireApp.scenario')
 
         initNouvelleLigne: function() {
             return {
-                id: 15
+                id: nextLigneId()
             }
+        },
+
+        creerNouvelleLigne: function() {
+            this.lignes.push(initNouvelleLigne());
         }
     };
 

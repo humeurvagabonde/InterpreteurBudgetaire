@@ -24,28 +24,6 @@ angular.module('interpreteurBudgetaireApp.scenario')
 		};
 
 		/* Definition du modele -- a sortir dans un servcie je pense*/
-		function nouvelleLigne(message) {
-			return {
-				id: message.lignes.length + 1,
-				organ: null,
-				nature: null,
-				destination: null,
-				operation: null,
-				montant: null
-			};
-		}
-
-		function nouveauMessage() {
-			var message = {
-				montant: null,
-				typeEvenement: null,
-				lignes: []
-			};
-			message.lignes.push(nouvelleLigne(message));
-
-			return message;
-		}
-
 		$scope.message = new Message();
 
 		/* Modele dans l'ihm */
@@ -53,7 +31,7 @@ angular.module('interpreteurBudgetaireApp.scenario')
 
 		/* Actions. */
 		$scope.ajouterNouvelleLigne = function(message) {
-			message.lignes.push(nouvelleLigne(message));
+			message.creerNouvelleLigne();
 		}
 
 		/* Helpers */
