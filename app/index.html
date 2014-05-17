@@ -41,9 +41,9 @@
 		  <!-- Collect the nav links, forms, and other content for toggling -->
 		  <!-- le 'in' vient de bootstrap.css 3.1.1 -->
 		  <div class="collapse navbar-collapse" data-ng-class="!navCollapsed && 'in'">
-				<ul class="nav navbar-nav">
-		  		<li data-ng-class="{active: $state.includes('ecritures')}"><a ui-sref="ecritures.list">Ecritures</a></li>
+			<ul class="nav navbar-nav">
 		  		<li data-ng-class="{active: $state.includes('scenario')}"><a ui-sref="scenario.creer">Scenario</a></li>
+		  		<li data-ng-class="{active: $state.includes('ecritures')}"><a ui-sref="ecritures.list">Ecritures</a></li>
 		  	</ul>
 		  	<form class="navbar-form navbar-right">
 				<input type="text" class="form-control" placeholder="Search...">

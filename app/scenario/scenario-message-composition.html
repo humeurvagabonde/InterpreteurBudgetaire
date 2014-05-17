@@ -12,22 +12,21 @@
     <div class="panel-body">
 			<form role="form">
 				<div class="form-group">
-					<label for="typeEvntId">Type</label>
 					<ul class="nav nav-pills">
-					  <li class="active"><a href="#">Saisie budget</a></li>
-					  <li><a href="#">Ventilation</a></li>
-					  <li><a href="#">Engagement juridique</a></li>
+					  <li class="active"><a href="#">Saisir budget</a></li>
+					  <li class=""><a href="#">Ventiler</a></li>
+					  <li class="" ><a href="#">Engager</a></li>
 					</ul>
 		    </div>
 				<div class="form-group">
-			    <label>Ligne</label>
 					<ul class="list-group">
-				    <li ng-repeat="ligne in message.lignes">
-			        <div class="panel panel-default message-ligne-right">
+				    <li ng-repeat="ligne in message.lignes" ng-click="selectionnerLigne(message, ligne)">
+			        <div class="panel panel-default message-ligne-right {{estSelectionnee(ligne) && 'selected' || ''}}">
 		            <div class="panel-body">
 	                <div class="panel-more1 imputation imputation-organ imputation-empty">
 	                    {{ligne.organ}}
 	                </div>
+	                <!-- ng-repeat="imputation in lignes.imputations" ?? -->
 	                <div class="panel-more1 imputation imputation-empty">
 	                	<i class="fa fa-square-o"></i>
 	                	<span class="glyphicon-class">{{ligne.organ}}</span>
@@ -47,17 +46,17 @@
 										<div class="sunken-menu-contents">
 											<ul class="sunken-menu-group">
 												<li>
-													<a href="" class="sunken-menu-item selected">
-														<i ng-class="{fa: true, 'fa-trash-o': isLigneEnCours(ligne), 'fa-square-o': !isLigneEnCours(ligne)}"></i>													
+													<a href="" ng-class="{'sunken-menu-item': true, 'selected': estSelectionnee(ligne)}" ng-click="selectionnerLigne(message, ligne)">
+														<i ng-class="{'fa': true, 'fa-square': estSelectionnee(ligne), 'fa-square-o': !estSelectionnee(ligne)}"></i>													
 													</a>
 												</li>
 												<li>
-													<a href="" class="sunken-menu-item selected">
+													<a href="" class="sunken-menu-item" ng-click="dupliquerLigne(message, ligne)">
 														<i class="fa fa-copy"></i>
 													</a>
 												</li>
-												<li>
-													<a href="" class="sunken-menu-item selected">
+												<li ng-show="estSupprimable(message, ligne)">
+													<a href="" class="sunken-menu-item" ng-click="supprimerLigne(message, ligne)">
 														<i class="fa fa-trash-o"></i>
 													</a>
 												</li>

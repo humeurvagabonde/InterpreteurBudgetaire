@@ -29,14 +29,22 @@ angular.module('interpreteurBudgetaireApp.scenario', ['ui.router', 'interpreteur
     .state('scenario.creer', {
       url: '/creer',
       views: {
-        'referentiels-liste': {
+        'referentiels-liste@scenario': {
           templateUrl: 'scenario/scenario-referentiels-liste.html'
         },
-        'referentiels-details': {
+        'referentiels-details@scenario': {
           templateUrl: 'scenario/scenario-referentiels-details.html'
         },
-        'message-composition': {
+        'message-composition@scenario': {
           templateUrl: 'scenario/scenario-message-composition.html'
+        }
+      }
+    })
+    .state('scenario.creer.nature', {
+      url: '/creer/nature',
+      views: {
+        'referentiels-details@scenario': {
+          templateUrl: 'scenario/scenario-referentiels-details-nature.html'
         }
       }
     })

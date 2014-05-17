@@ -1,5 +1,5 @@
 angular.module('interpreteurBudgetaireApp.scenario')
-    .factory('Message', function() {
+    .factory('Message', function(MessageLigne) {
     /* Structure Message
         var message = {
         montant: null,
@@ -10,10 +10,12 @@ angular.module('interpreteurBudgetaireApp.scenario')
         Structure Ligne
         {
         id: message.lignes.length + 1,
-        organ: null,
-        nature: null,
-        destination: null,
-        operation: null,
+        imputations: [
+            {organ: null},
+            {nature: null},
+            {destination: null},
+            {operation: null}
+        ],
         montant: null
         }
     */
@@ -32,7 +34,7 @@ angular.module('interpreteurBudgetaireApp.scenario')
         // Some other initializations related to book
         if (angular.isUndefined(this.lignes)) {
             this.lignes = [];
-            ;
+            this.creerNouvelleLigne();
         }
     };
 
@@ -48,8 +50,27 @@ angular.module('interpreteurBudgetaireApp.scenario')
         },
 
         creerNouvelleLigne: function() {
-            this.lignes.push(initNouvelleLigne());
+            this.lignes.push(this.initNouvelleLigne());
+        },
+
+        dupliquer: function(ligne) {
+            var clone = angular.copy(ligne);
+            clone.id =  nextLigneId();
+            this.lignes.push(clone);
+        },
+
+        supprimer: function(ligne) {
+            var meslignes = this.lignes || [];
+            var idx = meslignes.indexOf(ligne);
+            if(idx != -1) {
+                meslignes.splice(idx, 1);
+            }
+        },
+
+        nbLignes: function() {
+            return this.lignes.length;
         }
+
     };
 
     return Message;

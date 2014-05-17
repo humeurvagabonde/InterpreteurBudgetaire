@@ -29,7 +29,7 @@ angular
   )
   .config(function ($stateProvider, $urlRouterProvider, RestangularProvider) {
     // For any unmatched url, redirect to /state1
-    $urlRouterProvider.otherwise("/ecritures");
+    $urlRouterProvider.otherwise("/scenario/creer");
 
     // restangular
     RestangularProvider.setBaseUrl('/app-interpreteurdata/api/v1');

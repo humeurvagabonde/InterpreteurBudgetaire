@@ -19,25 +19,41 @@ angular.module('interpreteurBudgetaireApp.scenario')
 
 		$scope.typeNatureSelectionne = '';
  		$scope.typesNatureDispos = typesNature;
-		$scope.selectionnerTypeNature = function(typeNature) {
-			$scope.typeNatureSelectionne = typeNature.code;
-		};
 
-		/* Definition du modele -- a sortir dans un servcie je pense*/
+
+ 		/* --- INIT --- */
 		$scope.message = new Message();
-
-		/* Modele dans l'ihm */
 		$scope.currentLigne = $scope.message.lignes[0];
 
-		/* Actions. */
+		/*--- REFERENTIEL --- */
+		$scope.selectionnerTypeNature = function(typeNature) {
+			$scope.typeNatureSelectionne = typeNature.code;
+			//$scope.currentLigne.imputations
+		};
+
+		/*--- MESSAGE --- */
 		$scope.ajouterNouvelleLigne = function(message) {
 			message.creerNouvelleLigne();
 		}
 
-		/* Helpers */
-		$scope.isLigneEnCours = function(ligne) {
+		$scope.dupliquerLigne = function(message, ligne) {
+			message.dupliquer(ligne);
+		}
+
+		$scope.supprimerLigne = function(message, ligne) {
+			message.supprimer(ligne);
+		}
+
+		$scope.selectionnerLigne = function(message, ligne) {
+			$scope.currentLigne = ligne;
+		}
+
+		/* Helpers --> a remplacer par des appels a l'objet metier */
+		$scope.estSelectionnee = function(ligne) {
 			return angular.equals($scope.currentLigne, ligne);
 		}
 
-
+		$scope.estSupprimable = function(message, ligne) {
+			return message.nbLignes() > 1;
+		}
 	});

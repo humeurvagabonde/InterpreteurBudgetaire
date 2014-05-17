@@ -185,7 +185,7 @@ body {
 .ligne-actions-sidebar-right {
  position: absolute;
  top: 0px;
- right: -55px;
+ right: -60px;
 }
 
 /* From github */
@@ -227,18 +227,26 @@ body {
     display: block;
     text-shadow: 0 1px 0 #fff;
     text-decoration: none;
-    border: 1px solid transparent;
-    outline: 0
+    /*border: 1px solid transparent;*/
+    outline: 0;
+    border: 1px solid #eee;
+    color: #333333;
 }
 
 .sunken-menu .sunken-menu-item.selected {
     background: #fff;
+    color: #5ebd5e;
     border: 1px solid #eee;
-    color: #333333;
+    border-left: 3px solid #5ebd5e;
     font-weight: bold
 }
 
-.sunken-menu .sunken-menu-item.selected:after {
+.selected {
+  border-color: #5ebd5e;
+}
+
+
+.sunken-menu .sunken-menu-item.selected::after {
     background-color: #ba5d0f;
     background-image: -moz-linear-gradient(#d26911, #ba5d0f);
     background-image: -webkit-linear-gradient(#d26911, #ba5d0f);
@@ -279,3 +287,5 @@ body {
     vertical-align: middle;
     float: none;
 }
+
+
