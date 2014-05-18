@@ -1,7 +1,7 @@
 [
-  	{"id":1, "type":"SaisieBudget", "libelle":"Saisie du budget"},
-  	{"id":2, "type":"Vote", "libelle":"Vote du budget"},
-  	{"id":3, "type":"Ventilation", "libelle":"Ventilation"},
-  	{"id":4, "type":"EngagementJuridique", "libelle":"Engagement juridique"},
-  	{"id":5, "type":"PaiementFacture", "libelle":"Paiement d'une facture"}
+  	{"id":1, "code":"SaisieBudget", "libelle":"Saisie du budget"},
+  	{"id":2, "code":"Vote", "libelle":"Vote du budget"},
+  	{"id":3, "code":"Ventilation", "libelle":"Ventilation"},
+  	{"id":4, "code":"EngagementJuridique", "libelle":"Engagement juridique"},
+  	{"id":5, "code":"PaiementFacture", "libelle":"Paiement d'une facture"}
 ]

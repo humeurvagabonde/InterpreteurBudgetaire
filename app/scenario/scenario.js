@@ -40,11 +40,43 @@ angular.module('interpreteurBudgetaireApp.scenario', ['ui.router', 'interpreteur
         }
       }
     })
+    .state('scenario.creer.organ', {
+      url: '/creer/organisation',
+      views: {
+        'referentiels-details@scenario': {
+          templateUrl: 'scenario/scenario-referentiels-details-organ.html'
+        }
+      }
+    })
     .state('scenario.creer.nature', {
       url: '/creer/nature',
       views: {
         'referentiels-details@scenario': {
           templateUrl: 'scenario/scenario-referentiels-details-nature.html'
+        }
+      }
+    })
+    .state('scenario.creer.destination', {
+      url: '/creer/destination',
+      views: {
+        'referentiels-details@scenario': {
+          templateUrl: 'scenario/scenario-referentiels-details-destination.html'
+        }
+      }
+    })
+    .state('scenario.creer.compte', {
+      url: '/creer/compte',
+      views: {
+        'referentiels-details@scenario': {
+          templateUrl: 'scenario/scenario-referentiels-details-compte.html'
+        }
+      }
+    })
+    .state('scenario.creer.operation', {
+      url: '/creer/operation',
+      views: {
+        'referentiels-details@scenario': {
+          templateUrl: 'scenario/scenario-referentiels-details-operation.html'
         }
       }
     })

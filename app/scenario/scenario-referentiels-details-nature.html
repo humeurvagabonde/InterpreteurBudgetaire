@@ -1,6 +1,13 @@
 <div class="list-group">
-  <h4 class="list-group-item-heading">Natures</h4>
+  <h4 class="list-group-item-heading text-center">Natures</h4>
   <div class="list-group">
-    <a href="" ng-repeat="typeNature in typesNatureDispos" class="list-group-item" ng-click="selectionnerTypeNature(typeNature)">{{typeNature.libelle}}</a>
+  	<tabset>
+  		<tab heading="Dépense">
+    		<a href="" ng-repeat="typeNature in typesNatureDispos" ng-class="{'list-group-item': true, 'active': false}" ng-click="selectionnerImputation('nature', typeNature)">{{typeNature.libelle}}</a>
+    	</tab>
+    	<tab heading="Recette">
+    		A définir
+    	</tab>
+    </tabset>
   </div>
 </div>

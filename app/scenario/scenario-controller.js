@@ -22,14 +22,23 @@ angular.module('interpreteurBudgetaireApp.scenario')
 
 
  		/* --- INIT --- */
+ 		$scope.referentielSelectionne = '';
 		$scope.message = new Message();
 		$scope.currentLigne = $scope.message.lignes[0];
 
 		/*--- REFERENTIEL --- */
 		$scope.selectionnerTypeNature = function(typeNature) {
 			$scope.typeNatureSelectionne = typeNature.code;
-			//$scope.currentLigne.imputations
+			$scope.currentLigne.imputations['nature'] = typeNature;
 		};
+
+		$scope.selectionnerImputation = function(type, imputation) {
+			$scope.currentLigne.imputations[type] = imputation;
+		};
+
+		$scope.isImputationActive = function(referentiel) {
+			return angular.equals($scope.referentielSelectionne, referentiel);
+		}
 
 		/*--- MESSAGE --- */
 		$scope.ajouterNouvelleLigne = function(message) {
@@ -37,7 +46,7 @@ angular.module('interpreteurBudgetaireApp.scenario')
 		}
 
 		$scope.dupliquerLigne = function(message, ligne) {
-			message.dupliquer(ligne);
+			message.ajouter(ligne.dupliquer());
 		}
 
 		$scope.supprimerLigne = function(message, ligne) {

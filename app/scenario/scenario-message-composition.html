@@ -23,18 +23,32 @@
 				    <li ng-repeat="ligne in message.lignes" ng-click="selectionnerLigne(message, ligne)">
 			        <div class="panel panel-default message-ligne-right {{estSelectionnee(ligne) && 'selected' || ''}}">
 		            <div class="panel-body">
-	                <div class="panel-more1 imputation imputation-organ imputation-empty">
-	                    {{ligne.organ}}
+
+               		<!-- nature:fa-sitemap ; compte:fa-book; ; dest:fa-puzzle-piece; ope: fa-cogs -->	            	
+	                <div ng-class="{'panel-more1 imputation': true, 'imputation-empty': !ligne.organDefinie()}">
+	                    <i class="fa fa-2x fa-sitemap"></i>
+	                		<span class="glyphicon-class">{{ligne.imputations.organ.libelle}}</span>
 	                </div>
-	                <!-- ng-repeat="imputation in lignes.imputations" ?? -->
+	                
+									<div class="panel-more1 imputation imputation-empty" ng-repeat="imputation in ligne.imputations">
+	                	<i class="fa fa-2x fa-puzzle-piece"></i>
+	                	<span class="glyphicon-class">{{imputation.libelle}}</span>
+	                </div>
+
+	                <div ng-class="{'panel-more1 imputation': true, 'imputation-empty': !ligne.operationDefinie()}">
+	                    <i class="fa fa-2x fa-cogs"></i>
+	                		<span class="glyphicon-class">{{ligne.imputations.operation.libelle}}</span>
+	                </div>
+	                <!--
 	                <div class="panel-more1 imputation imputation-empty">
 	                	<i class="fa fa-square-o"></i>
-	                	<span class="glyphicon-class">{{ligne.organ}}</span>
+	                	<span class="glyphicon-class">DUMMY : {{ligne.organ}}</span>
 	                </div>
 	                <div class="panel-more1 imputation imputation-operation">
 	                    <img src="http://lorempixel.com/100/100" />
-	                    <br /><span>Caption</span>
+	                    <br /><span>DUMMY : Caption</span>
 	                </div>
+	                -->
 									<div class="panel-more1 imputation-montant form-group col-xs-3 vcenter">
 								    <div class="input-group">
 										  <span class="input-group-addon">€</span>
@@ -47,7 +61,7 @@
 											<ul class="sunken-menu-group">
 												<li>
 													<a href="" ng-class="{'sunken-menu-item': true, 'selected': estSelectionnee(ligne)}" ng-click="selectionnerLigne(message, ligne)">
-														<i ng-class="{'fa': true, 'fa-square': estSelectionnee(ligne), 'fa-square-o': !estSelectionnee(ligne)}"></i>													
+														<i ng-class="{'fa': true, 'fa-check-square': estSelectionnee(ligne), 'fa-square-o': !estSelectionnee(ligne)}"></i>													
 													</a>
 												</li>
 												<li>

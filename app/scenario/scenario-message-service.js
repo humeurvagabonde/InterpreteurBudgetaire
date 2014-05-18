@@ -1,5 +1,7 @@
 angular.module('interpreteurBudgetaireApp.scenario')
     .factory('Message', function(MessageLigne) {
+
+
     /* Structure Message
         var message = {
         montant: null,
@@ -19,16 +21,9 @@ angular.module('interpreteurBudgetaireApp.scenario')
         montant: null
         }
     */
-    var simpleLignesCounter = 0;
-    function nextLigneId() {
-        simpleLignesCounter = simpleLignesCounter + 1;
-        return simpleLignesCounter;
-    }
-
-
-    function Message(msgData) {
-        if (msgData) {
-            this.setData(msgData);
+    function Message(data) {
+        if (!angular.isUndefined(data)) {
+            this.setData(data);
         }
 
         // Some other initializations related to book
@@ -39,24 +34,16 @@ angular.module('interpreteurBudgetaireApp.scenario')
     };
 
     Message.prototype = {
-        setData: function(msgData) {
-            angular.extend(this, msgData);
-        },
-
-        initNouvelleLigne: function() {
-            return {
-                id: nextLigneId()
-            }
+        setData: function(data) {
+            angular.extend(this, data);
         },
 
         creerNouvelleLigne: function() {
-            this.lignes.push(this.initNouvelleLigne());
+            this.lignes.push(new MessageLigne());
         },
 
-        dupliquer: function(ligne) {
-            var clone = angular.copy(ligne);
-            clone.id =  nextLigneId();
-            this.lignes.push(clone);
+        ajouter: function(ligne) {
+            this.lignes.push(ligne);
         },
 
         supprimer: function(ligne) {

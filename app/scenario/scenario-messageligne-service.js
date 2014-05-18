@@ -4,12 +4,12 @@ angular.module('interpreteurBudgetaireApp.scenario')
         {
         id: message.lignes.length + 1,
         type: typeEvenement
-        imputations: [
-            {organ: null},
-            {nature: null},
-            {destination: null},
-            {operation: null}
-        ],
+        imputations: {
+            organ: null,
+            nature: null,
+            destination: null,
+            operation: null
+        },
         montant: null
         }
     */
@@ -17,20 +17,41 @@ angular.module('interpreteurBudgetaireApp.scenario')
     function nextLigneId() {
         simpleLignesCounter = simpleLignesCounter + 1;
         return simpleLignesCounter;
-    }
+    };
 
 
     function MessageLigne(data) {
-        if (!angular.isUndefined(data) {
+        if (!angular.isUndefined(data)) {
             this.setData(msgData);
         } else {
             this.id = nextLigneId();
+            this.imputations = {}; /* an array will be better */
         }
     };
 
     MessageLigne.prototype = {
         setData: function(data) {
             angular.extend(this, data);
+        },
+        /* Helpers : imputationDefini() = currying ?*/
+        organDefinie: function() {
+            return !angular.isUndefined(this.imputations.organ);
+        },
+        natureDefinie: function() {
+            return !angular.isUndefined(this.imputations.nature);
+        },
+        destinationDefinie: function() {
+            return !angular.isUndefined(this.imputations.destination);
+        },
+        compteDefini: function() {
+            return !angular.isUndefined(this.imputations.compte);
+        },
+
+        /* Actions */
+        dupliquer: function() {
+            var clone = angular.copy(this);
+            clone.id =  nextLigneId();
+            return clone;
         }
     };
 
