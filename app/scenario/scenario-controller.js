@@ -20,7 +20,6 @@ angular.module('interpreteurBudgetaireApp.scenario')
 		$scope.typeNatureSelectionne = '';
  		$scope.typesNatureDispos = typesNature;
 
-
  		/* --- INIT --- */
  		$scope.referentielSelectionne = '';
 		$scope.message = new Message();

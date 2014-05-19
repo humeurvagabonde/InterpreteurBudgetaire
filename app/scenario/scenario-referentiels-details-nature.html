@@ -3,7 +3,10 @@
   <div class="list-group">
   	<tabset>
   		<tab heading="Dépense">
-    		<a href="" ng-repeat="typeNature in typesNatureDispos" ng-class="{'list-group-item': true, 'active': false}" ng-click="selectionnerImputation('nature', typeNature)">{{typeNature.libelle}}</a>
+    		<a href="" ng-repeat="typeNature in typesNatureDispos" class="list-group-item" ng-click="selectionnerImputation('nature', typeNature)">
+          <i class="fa fa-link pull-right"></i>
+          {{typeNature.libelle}}
+        </a>
     	</tab>
     	<tab heading="Recette">
     		A définir

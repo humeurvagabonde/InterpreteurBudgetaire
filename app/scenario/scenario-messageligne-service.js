@@ -25,7 +25,7 @@ angular.module('interpreteurBudgetaireApp.scenario')
             this.setData(msgData);
         } else {
             this.id = nextLigneId();
-            this.imputations = {}; /* an array will be better */
+            this.imputations = {}; /* un array est mieux ? */
         }
     };
 
@@ -45,6 +45,9 @@ angular.module('interpreteurBudgetaireApp.scenario')
         },
         compteDefini: function() {
             return !angular.isUndefined(this.imputations.compte);
+        },
+        imputationsDefinies: function() {
+            return this.imputations;
         },
 
         /* Actions */

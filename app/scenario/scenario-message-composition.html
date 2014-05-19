@@ -21,34 +21,28 @@
 				<div class="form-group">
 					<ul class="list-group">
 				    <li ng-repeat="ligne in message.lignes" ng-click="selectionnerLigne(message, ligne)">
-			        <div class="panel panel-default message-ligne-right {{estSelectionnee(ligne) && 'selected' || ''}}">
+			        <div ng-class="{'panel panel-default message-ligne-right': true, 'selected': estSelectionnee(ligne)}">
 		            <div class="panel-body">
 
                		<!-- nature:fa-sitemap ; compte:fa-book; ; dest:fa-puzzle-piece; ope: fa-cogs -->	            	
-	                <div ng-class="{'panel-more1 imputation': true, 'imputation-empty': !ligne.organDefinie()}">
-	                    <i class="fa fa-2x fa-sitemap"></i>
-	                		<span class="glyphicon-class">{{ligne.imputations.organ.libelle}}</span>
-	                </div>
-	                
-									<div class="panel-more1 imputation imputation-empty" ng-repeat="imputation in ligne.imputations">
-	                	<i class="fa fa-2x fa-puzzle-piece"></i>
-	                	<span class="glyphicon-class">{{imputation.libelle}}</span>
-	                </div>
-
-	                <div ng-class="{'panel-more1 imputation': true, 'imputation-empty': !ligne.operationDefinie()}">
+               		<div ng-if="!ligne.imputationsDefinies()">
+		                <div class="panel-more1 imputation imputation-empty">
+		                    <i class="fa fa-2x fa-sitemap"></i>
+		                </div>
+  									<div class="panel-more1 imputation imputation-empty">
+	                		<i class="fa fa-2x fa-puzzle-piece"></i>
+	                	</div>
+	                	<div class="panel-more1 imputation imputation-empty">
 	                    <i class="fa fa-2x fa-cogs"></i>
-	                		<span class="glyphicon-class">{{ligne.imputations.operation.libelle}}</span>
-	                </div>
-	                <!--
-	                <div class="panel-more1 imputation imputation-empty">
-	                	<i class="fa fa-square-o"></i>
-	                	<span class="glyphicon-class">DUMMY : {{ligne.organ}}</span>
-	                </div>
-	                <div class="panel-more1 imputation imputation-operation">
-	                    <img src="http://lorempixel.com/100/100" />
-	                    <br /><span>DUMMY : Caption</span>
-	                </div>
-	                -->
+	                	</div>
+									</div>
+									<div ng-if="ligne.imputationsDefinies()">               
+										<div class="panel-more1 imputation imputation-empty" ng-repeat="imputation in ligne.imputations">
+		                	<i class="fa fa-2x fa-puzzle-piece"></i>
+		                	<span class="glyphicon-class">{{imputation.libelle}}</span>
+		                </div>
+		              </div>
+
 									<div class="panel-more1 imputation-montant form-group col-xs-3 vcenter">
 								    <div class="input-group">
 										  <span class="input-group-addon">€</span>
