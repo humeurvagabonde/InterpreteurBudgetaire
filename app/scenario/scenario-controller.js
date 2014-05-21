@@ -5,9 +5,11 @@ angular.module('interpreteurBudgetaireApp.scenario')
 
   	$scope.alerts = [];
   	$scope.typesEvenement = [
-  		{id: '1', code: 'voter', libelle: 'Voter budget'},
-  		{id: '2', code: 'ventiler', libelle: 'Ventiler'},
-  		{id: '3', code: 'engager', libelle: 'Engager'}
+  		{id: '1', code: 'saisir', libelle: 'Saisir budget'},
+  		{id: '2', code: 'voter', libelle: 'Voter budget'},
+  		{id: '3', code: 'ventiler', libelle: 'Ventiler'},
+  		{id: '4', code: 'engager', libelle: 'Engager'},
+  		{id: '5', code: 'payer', libelle: 'Payer'},
   	];
 
 		$scope.typeEvenementSelectionne = '';
