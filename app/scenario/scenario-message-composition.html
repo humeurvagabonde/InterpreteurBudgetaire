@@ -1,21 +1,18 @@
+<alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+
 <div class="panel panel-info">
     <div class="panel-heading clearfix">
       <h3 class="panel-title  pull-left" style="padding-top: 8px;">Composer un objet de gestion</h3>
       <div class="btn-group pull-right">
         <button type="button" class="btn btn-default" ng-click="ajouterNouvelleLigne(message)"><span class="glyphicon glyphicon-plus-sign"></span></button>
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-center"></span></button>
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-right"></span></button>
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-justify"></span></button>
       </div>
   	</div>
 
     <div class="panel-body">
-			<form role="form">
+			<form role="form" ng-submit="creerMessage(message)">
 				<div class="form-group">
 					<ul class="nav nav-pills">
-					  <li class="active"><a href="#">Saisir budget</a></li>
-					  <li class=""><a href="#">Ventiler</a></li>
-					  <li class="" ><a href="#">Engager</a></li>
+					  <li ng-class="{'active': isTypeEvenementActif(typeEvenement)}" ng-repeat="typeEvenement in typesEvenement"><a href="" ng-click="selectionnerTypeEvenement(typeEvenement)">{{typeEvenement.libelle}}</a></li>
 					</ul>
 		    </div>
 				<div class="form-group">
@@ -43,7 +40,7 @@
 									<!-- /bofbof -->
 
 									<div ng-if="ligne.imputationsDefinies()">               
-										<div class="panel-more1 imputation imputation-empty" ng-repeat="imputation in ligne.imputations">
+										<div class="panel-more1 imputation imputation-definie" ng-repeat="imputation in ligne.imputations">
 		                	<i ng-class="{'fa fa-2x': true, 'fa-sitemap': ligne.organDefinie(), 'fa-puzzle-piece': ligne.imputationDefinie(), 'fa-cogs': ligne.operationDefinie()}"></i>
 		                	<span class="glyphicon-class">{{imputation.valeur.libelle}}</span>
 		                </div>

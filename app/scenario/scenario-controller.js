@@ -1,7 +1,14 @@
 'use strict';
 
 angular.module('interpreteurBudgetaireApp.scenario')
-  .controller('ScenarioCtrl', function ($scope, Message, typesEvenement, lignesBudgetaires, typesNature) {
+  .controller('ScenarioCtrl', function ($scope, Message, MessageService, typesEvenement, lignesBudgetaires, typesNature) {
+
+  	$scope.alerts = [];
+  	$scope.typesEvenement = [
+  		{id: '1', code: 'voter', libelle: 'Voter budget'},
+  		{id: '2', code: 'ventiler', libelle: 'Ventiler'},
+  		{id: '3', code: 'engager', libelle: 'Engager'}
+  	];
 
 		$scope.typeEvenementSelectionne = '';
 		$scope.typesEvenementDispos = typesEvenement;
@@ -39,31 +46,56 @@ angular.module('interpreteurBudgetaireApp.scenario')
 
 		$scope.isImputationActive = function(referentiel) {
 			return angular.equals($scope.referentielSelectionne, referentiel);
+		};
+
+		$scope.selectionnerTypeEvenement = function(typeEvnt) {
+			$scope.message.typeEvenement = typeEvnt;
+		}
+
+		$scope.isTypeEvenementActif = function(typeEvnt) {
+			return angular.equals($scope.message.typeEvenement, typeEvnt);
 		}
 
 		/*--- MESSAGE --- */
+		/* Utilisez $scope.message dans le futur plutot qu'un argument ? */
+		$scope.creerMessage = function(message) {
+			MessageService.creer(message).then(function() {
+				$scope.alerts.push({type: 'success', msg: 'Yay!'});
+    		console.log("Object saved OK");
+		  }, function() {
+		  	$scope.alerts.push({type: 'danger', msg: 'There was an error saving!'});
+		    console.log("There was an error saving");
+		  });
+		};
+
 		$scope.ajouterNouvelleLigne = function(message) {
 			message.creerNouvelleLigne();
-		}
+		};
 
 		$scope.dupliquerLigne = function(message, ligne) {
 			message.ajouter(ligne.dupliquer());
-		}
+		};
 
 		$scope.supprimerLigne = function(message, ligne) {
 			message.supprimer(ligne);
-		}
+		};
 
 		$scope.selectionnerLigne = function(message, ligne) {
 			$scope.currentLigne = ligne;
-		}
+		};
 
 		/* Helpers --> a remplacer par des appels a l'objet metier */
+		$scope.closeAlert = function(index) {
+	    $scope.alerts.splice(index, 1);
+	  };
 		$scope.estSelectionnee = function(ligne) {
 			return angular.equals($scope.currentLigne, ligne);
-		}
+		};
 
 		$scope.estSupprimable = function(message, ligne) {
 			return message.nbLignes() > 1;
-		}
+		};
+
+		/* TESTS */
+		$scope.msgsRest = MessageService.loadMessages();
 	});

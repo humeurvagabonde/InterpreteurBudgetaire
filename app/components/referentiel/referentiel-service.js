@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('interpreteurBudgetaireApp.referentiel')
-  .factory('referentielService', ['$http', 'Restangular', function ($http, Restangular) {
+  .factory('referentielService', ['Restangular', function (Restangular) {
     // Service logic
     var typesEvenement = Restangular.all('referentiel/types-evenement');
     var lignesBudgetaires = Restangular.all('referentiel/lignes-budgetaires');

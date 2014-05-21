@@ -283,6 +283,11 @@ body {
     border: 1px dashed;
 }
 
+.imputation-definie {
+    background-color: #fcf8e3;
+    border: 1px solid;
+}
+
 .vcenter {
     display: inline-block;
     vertical-align: middle;
