@@ -15,7 +15,10 @@
 		<div class="col-md-2">
 			<div class="panel panel-info">
 				<div class="panel-heading">
-		   	 <h3 class="panel-title">CRB Sélectionnés</h3>
+		   	 <h3 class="panel-title">Historique</h3>
+		   	 <ul>
+		   	 	<li ng-repeat="histoItem in historique">{{histoItem.libelle}}</li>
+		   	 </ul>
 		 	 </div>
 			</div>
 		</div>
