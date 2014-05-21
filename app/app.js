@@ -12,8 +12,10 @@ angular
     'ngRoute',
     'ui.bootstrap',
     'ui.router',
-    'restangular'
+    'restangular',
+    'angular-lodash'
   ])
+  
   .run(
     [          '$rootScope', '$state', '$stateParams',
       function ($rootScope,   $state,   $stateParams) {
@@ -27,6 +29,7 @@ angular
       }
     ]
   )
+  
   .config(function ($stateProvider, $urlRouterProvider, RestangularProvider) {
     // For any unmatched url, redirect to /state1
     $urlRouterProvider.otherwise("/scenario/creer");
@@ -34,4 +37,8 @@ angular
     // restangular
     RestangularProvider.setBaseUrl('/app-interpreteurdata/api/v1');
 
+  })
+  
+  .factory('_', function() {
+    return window._; // assumes underscore has already been loaded on the page
   });

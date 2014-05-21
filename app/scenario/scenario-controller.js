@@ -32,7 +32,9 @@ angular.module('interpreteurBudgetaireApp.scenario')
 		};
 
 		$scope.selectionnerImputation = function(type, imputation) {
+
 			$scope.currentLigne.imputations[type] = imputation;
+			$scope.currentLigne.imputer(type, imputation);
 		};
 
 		$scope.isImputationActive = function(referentiel) {

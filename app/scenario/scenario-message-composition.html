@@ -23,26 +23,32 @@
 				    <li ng-repeat="ligne in message.lignes" ng-click="selectionnerLigne(message, ligne)">
 			        <div ng-class="{'panel panel-default message-ligne-right': true, 'selected': estSelectionnee(ligne)}">
 		            <div class="panel-body">
-
-               		<!-- nature:fa-sitemap ; compte:fa-book; ; dest:fa-puzzle-piece; ope: fa-cogs -->	            	
+		            	<!-- bofbof -->
                		<div ng-if="!ligne.imputationsDefinies()">
 		                <div class="panel-more1 imputation imputation-empty">
 		                    <i class="fa fa-2x fa-sitemap"></i>
+		                    <span class="glyphicon-class"><a href="" ui-sref="scenario.creer.organ">A renseigner</a></span>
 		                </div>
+		                <!--
   									<div class="panel-more1 imputation imputation-empty">
 	                		<i class="fa fa-2x fa-puzzle-piece"></i>
+	                		<span class="glyphicon-class">A renseigner</span>
 	                	</div>
 	                	<div class="panel-more1 imputation imputation-empty">
 	                    <i class="fa fa-2x fa-cogs"></i>
+	                    <span class="glyphicon-class"><a href="" ui-sref="scenario.creer.operation">A renseigner</a></span>
 	                	</div>
+	                	-->
 									</div>
+									<!-- /bofbof -->
+
 									<div ng-if="ligne.imputationsDefinies()">               
 										<div class="panel-more1 imputation imputation-empty" ng-repeat="imputation in ligne.imputations">
-		                	<i class="fa fa-2x fa-puzzle-piece"></i>
-		                	<span class="glyphicon-class">{{imputation.libelle}}</span>
+		                	<i ng-class="{'fa fa-2x': true, 'fa-sitemap': ligne.organDefinie(), 'fa-puzzle-piece': ligne.imputationDefinie(), 'fa-cogs': ligne.operationDefinie()}"></i>
+		                	<span class="glyphicon-class">{{imputation.valeur.libelle}}</span>
 		                </div>
 		              </div>
-
+		              
 									<div class="panel-more1 imputation-montant form-group col-xs-3 vcenter">
 								    <div class="input-group">
 										  <span class="input-group-addon">€</span>
