@@ -1,13 +1,44 @@
 InterpreteurBudgetaire
 ======================
 
-- Menu principaux
--- Ecritures
----- Lister toutes les ecritures
----- Layout avec sidebar a gauche pour filter par type d'evenement (github-like)
----- Filtres dispos en haut de page pour filtrer par livre, etc
----- Pouvoir afficher le détail d'une ecriture (layout dans ce cas ?)
----- Sidebar : ajout d'un graphe facilitant la recherche ?
--- Scenario
----- Saisie un evenement et visualiser les ecritures generees
----- Gestion ajustement d'un evenement.
+Pré-requis
+----------
+
+- installer git
+- installer npm (disponible avec node)
+- le proxy pour npm se configure via le fichier ~/.npmrc
+
+	`proxy = http://localhost:3128/
+	http-proxy = http://localhost:3128/
+	https-proxy = https://localhost:3128/
+	HTTP_PROXY = http://localhost:3128/
+	HTTPS_PROXY = https://localhost:3128/
+	strict-ssl = false
+	registry = http://registry.npmjs.org/`
+
+- le proxy pour bower se configure dans le fichier .bowerrc du projet concerné
+
+	`{
+		"proxy" : "http://localhost:3128",
+    "https-proxy" : "http://localhost:3128",
+    "directory": "app/bower_components",
+		"strict-ssl": "false"
+	}`
+
+Installation
+-------------
+
+- cloner le repo en local via git
+- installer les outils nécessaires (bower / grunt / ...) en utilisant npm : 'npm install'
+- installer les dépendances nécessaires (équivalent du gradle) en utilisant bower : 'bower install'
+- l'application se lance en exécutant grâce à grunt : grunt serve
+
+Fonctionnalités
+---------------
+
+1. Scénario
+	- Créer un événement sous la forme d'un message
+	- Visualiser le résultat de l'événement
+	- Lister l'historique des messages
+2. Ecritures
+	- Lister les ecritures
