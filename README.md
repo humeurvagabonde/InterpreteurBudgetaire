@@ -33,6 +33,16 @@ Installation
 - installer les dépendances nécessaires (équivalent du gradle) en utilisant bower : 'bower install'
 - l'application se lance en exécutant grâce à grunt : grunt serve
 
+Bibliothèques tierces
+---------------------
+
+Ce projet exploire des API tierces. La liste complète est disponible dans le bower.json.
+Ici on ne listera que les principales :
+
+- angular-bootstrap pour l'intégration des composants Bootstrap au sein d'Angular
+- angular-ui-router pour disposer d'un système de routage plus performant que celui fourni apr le module angular-route officiel
+- restangular qui s'appuie sur le service $http d'angular et offre un système de communication REST qui me semble plus évolué que $ressource (fourni par angular).
+
 Fonctionnalités
 ---------------
 
