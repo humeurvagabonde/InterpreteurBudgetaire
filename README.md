@@ -25,6 +25,9 @@ Pré-requis
 		"strict-ssl": "false"
 	}`
 
+- installer bower : `sudo npm install -g bower`
+- installer grunt : `sudo npm install -g grunt-cli`
+
 Installation
 -------------
 
